@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: raw
+    description: This is the raw listings schema containing 1 table - raw_listings
+    tables:
+      - name: raw_listings
+        description: Table containing all listings
+        columns: # ID, LISTING_URL, NAME, ROOM_TYPE, MINIMUM_NIGHTS, HOST_ID, PRICE, CREATED_AT, UPDATED_AT
+          - name: id
+            description: Primary key of the orders table
+            tests:
+              - unique
+              - not_null
+          - name: LISTING_URL
+            description: link to listings
+          - name: NAME
+            description: A brief description of the listing           
+          - name: ROOM_TYPE
+            description: Primary key of the orders table
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: MINIMUM_NIGHTS
+            description: minimum number of nights 
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: HOST_ID  
+            description: foreign key for the raw_hosts table. 
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: PRICE 
+            description: listing price in £
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: CREATED_AT 
+            description: listing creation date
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: UPDATED_AT
+            description: date listing was last updated
+            # tests:
+            #   - unique
+            #   - not_null
+      

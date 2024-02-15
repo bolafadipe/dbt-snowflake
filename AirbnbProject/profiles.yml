@@ -1,0 +1,27 @@
+AirbnbProject:
+  outputs:
+    dev:
+      account: jmefcab-fi62265
+      database: AIRBNB
+      password: boladbt
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: boladbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbt_project:
+  outputs:
+    dev:
+      dataset: dev_bfadipe
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Users\admin\Downloads\dbt-bq-413912-70bb43e3ad6c.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: dbt-bq-413912
+      threads: 1
+      type: bigquery
+  target: dev

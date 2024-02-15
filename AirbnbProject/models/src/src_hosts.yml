@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw
+    description: This is the raw listings schema containing 1 table - raw_listings
+    tables:
+      - name: raw_hosts
+        description: Table containing all host info
+        columns: # ID, NAME, IS_SUPERHOST, CREATED_AT, UPDATED_AT
+          - name: id
+            description: Primary key of the orders table
+            tests:
+              - unique
+              - not_null
+          - name: NAME
+            description: name of host
+            tests:
+              - not_null
+          - name: IS_SUPERHOST
+            description: A brief description of the listing 
+          - name: CREATED_AT 
+            description: hosts' creation date
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: UPDATED_AT
+            description: date hosts was last updated
+            # tests:
+            #   - unique
+            #   - not_null

@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: raw
+    description: This is the raw listings schema containing 1 table - raw_listings
+    tables:
+      - name: raw_reviews
+        description: Table containing all reviews
+        columns: # LISTING_ID, DATE, REVIEWER_NAME, COMMENTS, SENTIMENT
+          - name: LISTING_ID
+            description: foreign key for the listings table
+            tests:
+              - not_null
+          - name: DATE
+            description: review date
+            tests:
+              - not_null
+          - name: REVIEWER_NAME
+            description: name of reviewer 
+          - name: COMMENTS
+            description: comments by reviewers
+            # tests:
+            #   - unique
+            #   - not_null
+          - name: SENTIMENT
+            description: values that categorise reviews into positive, neutral, or negative
+            # tests:
+            #   - unique
+            #   - not_null
+        loaded_at_field: date
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24, period: hour}
+      
